@@ -1,0 +1,698 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	user-select: none;
+	user-zoom: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    background: rgb(37, 36, 36);
+    color: #fff;
+    padding: 1%;
+}
+
+#header {
+    width: 100%;
+    height: 70px;
+    background: #111010;
+    border-radius: 13px;
+    box-shadow: 2px 2px 8px rgb(0, 0, 0);
+    padding: 15px 20px 0 10px;
+}
+
+.logo-img {
+	display: none;
+}
+
+/* شروع کد های سرچ باکس */
+
+.search-box {
+	float:left;
+	background:rgb(27, 26, 26);
+	border-radius:40px;
+	direction:ltr;
+	margin:0px 10px 10px 0px;
+}
+
+.search-btn {
+	color:orange;
+	float:left;
+	width:40px;
+	height:40px;
+	border-radius:50%;
+	background:rgb(27, 26, 26);
+	display:flex;
+	justify-content:center;
+	align-items:center;
+    text-decoration: none;
+}
+
+.search-txt{
+	border:none;
+	background:none;
+	outline:none;
+	float:left;
+	padding:0;
+	color:white;
+	font-size:16px;
+	transition:0.8s;
+	line-height:40px;
+	width:160px;
+}
+
+.responsive-icon {
+	display: none;
+	z-index: 100;
+}
+
+.sidebar {
+	position: fixed;
+	height: 100%;
+	width: 300px;
+	left: -300px;
+	background: rgb(17, 16, 16);
+	z-index: 98;
+	border-radius: 13px;
+}
+
+.sidebar h1 {
+	font-size: 30px;
+	background: rgb(37, 36, 36);
+	padding: 17.5px 17.5px;
+	text-align: left;
+	color: orange;
+}
+
+.items {
+	line-height: 65px;
+	font-size: 20px;
+}
+
+.items li {
+	padding-left: 20px;
+	color: orange;
+	list-style-type: none;
+	cursor: pointer;
+}
+
+.items i {
+	padding: 5px;
+}
+
+.items li:hover i {
+	color: rgb(17, 16, 16);
+	transform: rotate(1turn);
+}
+
+.items li:hover {
+	background: orange;
+	color: rgb(17, 16, 16);
+	padding-left: 40px;
+}
+
+.responsive-icon input {
+	display: none;
+}
+
+label #menu, label #close {
+	font-size: 20px;
+	/* position: fixed; */
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+label #menu {
+	/* margin: 30px; */
+	margin-top: -6px;
+	margin-bottom: 10px;
+	padding: 10px 15px;
+	background: transparent;
+	border: 1px solid orange;
+	color: orange;
+}
+
+label #close {
+	border: 1px solid orange;
+	color: orange;
+	top: 26px;
+	margin-top: -10px;
+	left: -230px;
+	z-index: 99;
+	position: fixed;
+}
+
+#check:checked ~ .sidebar {
+	left: 0;
+	top: 0px;
+}
+
+#check:checked ~ label #close {
+	left: 230px;
+}
+
+#check:checked ~ section {
+	margin-left: 300px;
+}
+
+/* #check:checked ~ .sidebar {
+	position: fixed;
+} */
+
+/* شروع کد های لوگو */
+
+.logo {
+	float: right;
+}
+
+/* شروع کد های اسلایدر */
+
+#slider {
+    width: 55%;
+    height: 300px;
+    position: relative;
+    margin: 20px 0px;
+    overflow: hidden;
+	box-shadow: 2px 2px 8px rgb(0, 0, 0);
+    border-radius: 13px;
+}
+
+#slider img {
+    width: 100%;
+    height: 300px;
+	align-items: center;
+    border-radius: 13px;
+}
+
+.text {
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    text-align: center;
+}
+
+.prev, .next {
+    color: #fff;
+    text-decoration: none;
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+.prev:hover, .next:hover {
+    color: orange;
+    animation-name: animation;
+    animation-duration: .5s;
+}
+
+@keyframes animation {
+    0%, 100% {
+        font-size: 40px;
+    }
+    50% {
+        font-size: 48px;
+    }
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block  ;
+}
+
+/* شروع کد های مپ */
+
+#map {
+	float: right;
+	margin-top: -320px;
+	width: 43.5%;
+	height: 300px;
+	background: rgb(17, 16, 16);
+	box-shadow: 2px 2px 8px rgb(0, 0, 0);
+	border-radius: 13px;
+	overflow: hidden;
+	color: black;
+}
+
+#map a {
+	text-decoration: none;
+}
+
+#map img {
+	width: 100%;
+	height: 300px;
+	border-radius: 13px;
+}
+
+.flex {
+	display: flex;
+	flex-direction: column;
+}
+
+/* شروع کد های بخش اصلی */
+
+#main {
+	width: 100%;
+	height: 400px;
+	background: rgb(17, 16, 16);
+	border-radius: 13px;
+	box-shadow: 2px 2px 8px rgb(0, 0, 0);
+	padding: 15px;
+	display: flex;
+	flex-direction: row;
+	align-content: space-between;
+}
+
+/* شروع کد های اعلانات */
+
+#elanat {
+	width: 49.5%;
+	height: 100%;
+	background: rgb(27, 26, 26);
+	border-radius: 13px;
+	box-shadow: 2px 2px 8px rgb(0, 0, 0);
+	padding: 15px;
+	overflow: hidden;
+	text-align: center;
+	display: grid;
+	grid-template-rows: repeat(7, 50px);
+	grid-row-gap: 15px;
+	margin-right: 15px;
+}
+
+#elanat a {
+	text-decoration: none;
+}
+
+.elanat1, .gozashteh {
+	width: 100%;
+	height: 50px;
+	background: rgb(17, 16, 16);
+	border-radius: 13px;
+	text-align: left;
+	padding: 15px;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	margin-top: 15px;
+	box-shadow: 2px 2px 8px rgb(0, 0, 0);
+	color: #fff;
+	overflow: hidden;
+ }
+
+/* شروع گد های مراسمات گذشته */
+
+#gozashteh {
+	width: 49.5%;
+	height: 100%;
+	background: rgb(27, 26, 26);
+	border-radius: 13px;
+	box-shadow: 2px 2px 8px rgb(0, 0, 0);
+	padding: 15px;
+	overflow: hidden;
+	text-align: center;
+	/* margin-left: 50.5%; */
+	/* margin-top: -369px; */
+	display: grid;
+	grid-template-rows: repeat(7, 50px);
+	grid-row-gap: 15px;
+}
+
+#gozashteh a {
+	text-decoration: none;
+}
+
+/* شروع کد های بخش اساید */
+
+#aside {
+	width: 100%;
+	height: 300px;
+	padding: 15px;
+	background: rgb(17, 16, 16);
+	border-radius: 13px;
+	box-shadow: 2px 2px 8px black;
+	margin-top: 20px;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: repeat(10, 250px);
+	grid-gap: 15px;
+}
+
+#aside a {
+	text-decoration: none;
+}
+
+.aside {
+	width: 250px;
+	height: 100%;
+	border-radius: 13px;
+	background: rgb(27, 26, 26);
+	overflow: hidden;
+	box-shadow: 2px 2px 8px black;
+	text-align: center;
+	color: #fff;
+}
+
+.first-night img, .second-night img, .third-night img, .forth-night img, .fifth-night img, .six-night img, .seven-night img, .eight-night img, .nine-night img, .ten-night img {
+	width: 100%;
+	padding-bottom: 30px;
+}
+
+.first-night h4, .second-night h4, .third-night h4, .forth-night h4, .fifth-night h4, .six-night h4, .seven-night h4, .eight-night h4, .nine-night h4, .ten-night h4 {
+	padding-bottom: 20px;
+	text-decoration: none;
+}
+
+.first-night h6, .second-night h6, .third-night h6, .forth-night h6, .fifth-night h6, .six-night h6, .seven-night h6, .eight-night h6, .nine-night h6, .ten-night h6 {
+	line-height: 20px;
+	text-decoration: none;
+}
+
+/* شروع کدهای فوتر */
+
+#footer {
+	direction: rtl;
+	width: 100%;
+	height: 350px;
+	margin-bottom: -15px;
+	background: rgb(17, 16, 16);
+	border-radius: 13px 13px 0 0 ;
+	box-shadow: 2px 2px 8px black;
+	margin-top: 20px;
+	padding: 20px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.footer-info {
+	font-size: 1.3rem;
+	text-align: justify;
+}
+
+#iconbar {
+	float: left;
+	color: orange;
+	position: absolute;
+	bottom: 25px;
+	left: 20px;
+}
+
+.fab {
+	margin-right: 40px;
+	color: orange;
+	font-size: 1.5rem;
+}
+
+.a, .b, .c, .d {
+	transition: all .17s ease-in;
+}
+
+.a:hover, .b:hover, .c:hover, .d:hover {
+	color: #fff;
+}
+#footer h1 {
+	margin-bottom: 40px;
+}
+
+@media (max-width: 604px) {
+	.responsive-icon {
+		display: flex;
+		flex-direction: column;
+		float: left;
+		margin-top: 6px;
+	}
+	
+	.responsive-icon span {
+		display: inline-block;
+		height: 5px;
+		width: 30px;
+		margin: 2px;
+		background: orange;
+	}
+
+	.flex {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	#aside {
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+
+	.search-box {
+		display: none;
+		float:left;
+		background:rgb(27, 26, 26);
+		border-radius:40px;
+		direction:ltr;
+		margin:0px 10px 10px 0px;
+	}
+
+	.logo {
+		display: none;
+	}
+
+	.logo-img {
+		display: flex;
+		width: 60px;
+		margin-top: -10px;
+		/* flex-direction: column; */
+		float: right;
+		margin-right: -18px;
+	}
+}
+
+@media (max-width: 350px) {
+	#footer {
+		direction: rtl;
+		width: 100%;
+		height: 350px;
+		margin-bottom: -15px;
+		background: rgb(17, 16, 16);
+		border-radius: 13px 13px 0 0 ;
+		box-shadow: 2px 2px 8px black;
+		margin-top: 20px;
+		padding: 20px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.footer-info {
+		font-size: 1rem;
+		text-align: justify;
+	}
+
+	.fab {
+		margin-right: 25px;
+		color: orange;
+		font-size: 1.5rem;
+	}
+
+	.flex {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}
+
+@media (max-width: 430px) {
+	#header h1 {
+		font-size: 1.5rem;
+		margin-top: 6px;
+	}
+
+	#footer h1 {
+		font-size: 1.5rem;
+
+	}
+
+	.flex {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}
+
+@media (max-width: 310px) {
+	#header h1 {
+		font-size: 1.25rem;
+		margin-top: 6px;
+	}
+	
+	.flex {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	#footer h1 {
+		font-size: 1.25rem;
+
+	}
+}
+
+@media (max-width: 336px) {
+	#header h1 {
+		font-size: 1.25rem;
+		margin-top: 6px;
+	}
+
+	.flex {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}
+
+@media (max-width: 290px) {
+	#header h1 {
+		font-size: 1.1rem;
+		margin-top: 6px;
+	}
+
+	#footer h1 {
+		font-size: 1.1rem;
+
+	}
+
+	.flex {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}
+
+/* 530px */
+
+@media (max-width:530px) {
+	#main {
+		width: 100%;
+		height: 1130px;
+		background: rgb(17, 16, 16);
+		border-radius: 13px;
+		box-shadow: 2px 2px 8px rgb(0, 0, 0);
+		padding: 15px;
+		display: flex;
+		flex-direction: column;
+		align-content: space-between;
+	}
+
+	/* شروع کد های اعلانات */
+
+	#elanat {
+		width: 100%;
+		height: 100%;
+		background: rgb(27, 26, 26);
+		border-radius: 13px;
+		box-shadow: 2px 2px 8px rgb(0, 0, 0);
+		padding: 15px;
+		overflow: hidden;
+		text-align: center;
+		display: grid;
+		grid-template-rows: repeat(7, 50px);
+		grid-row-gap: 15px;
+		margin-bottom: 15px;
+	}
+
+	#elanat a {
+		text-decoration: none;
+	}
+
+	.elanat1, .gozashteh {
+		width: 100%;
+		height: 50px;
+		background: rgb(17, 16, 16);
+		border-radius: 13px;
+		text-align: left;
+		padding: 15px;
+		display: flex;
+		text-align: center;
+		align-items: center;
+		margin-top: 15px;
+		box-shadow: 2px 2px 8px rgb(0, 0, 0);
+		color: #fff;
+		overflow: hidden;
+	 }
+
+	/* شروع گد های مراسمات گذشته */
+
+	#gozashteh {
+		width: 100%;
+		height: 100%;
+		background: rgb(27, 26, 26);
+		border-radius: 13px;
+		box-shadow: 2px 2px 8px rgb(0, 0, 0);
+		padding: 15px;
+		overflow: hidden;
+		text-align: center;
+		/* margin-left: 50.5%; */
+		/* margin-top: -369px; */
+		display: grid;
+		grid-template-rows: repeat(7, 50px);
+		grid-row-gap: 15px;
+	}
+
+	#gozashteh a {
+		text-decoration: none;
+	}
+
+	.flex {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}
+
+@media (max-width: 270px) {
+	#header h1 {
+		font-size: .9rem;
+		margin-top: 6px;
+	}
+
+	#footer h1 {
+		font-size: .9rem;
+
+	}
+
+	.flex {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}
+
+@media (max-width: 230px) {
+	#header h1 {
+		font-size: .7rem;
+		margin-top: 6px;
+	}
+
+	#footer h1 {
+		font-size: .7rem;
+
+	}
+
+	.fab {
+		margin-right: 15px;
+		color: orange;
+		font-size: 1.5rem;
+	}
+
+	.flex {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}
